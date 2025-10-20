@@ -12,24 +12,32 @@ const inputVariants = cva(
         "dark-gray": "bg-gray-700 text-gray-200",
         dark: "bg-black text-white",
       },
+      size: {
+        sm: "h-8 text-sm px-3",
+        md: "h-10 text-sm px-4",
+        lg: "h-12 text-base px-4",
+      }
     },
     defaultVariants: {
       variant: "gray",
+      size: "md",
     },
   },
 );
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
-    VariantProps<typeof inputVariants> {}
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
+  VariantProps<typeof inputVariants> {
+  size?: "sm" | "md" | "lg";
+}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, variant, type, ...props }, ref) => {
+  ({ className, size, variant, type, ...props }, ref) => {
     return (
       <input
         ref={ref}
         type={type}
-        className={cn(inputVariants({ variant }), className)}
+        className={cn(inputVariants({ variant, size }), className)}
         {...props}
       />
     );
