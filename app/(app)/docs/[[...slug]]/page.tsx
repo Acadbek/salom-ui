@@ -4,6 +4,7 @@ import { getRegistryItem, getComponentCode } from "@/lib/registry"
 import ComponentPreview from "@/components/component-preview"
 import ComponentCode from "@/components/component-code"
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function ComponentPage(
   { params, _searchParams }: {
     params: { slug?: string[] };
