@@ -4,7 +4,11 @@ import { getRegistryItem, getComponentCode } from "@/lib/registry"
 import ComponentPreview from "@/components/component-preview"
 import ComponentCode from "@/components/component-code"
 
-export default function ComponentPage({ params }: { params: { slug?: string[] } }) {
+export default function ComponentPage(
+  { params, _searchParams }: {
+    params: { slug?: string[] };
+    _searchParams: { [key: string]: string | string[] | undefined };
+  }) {
   const slug = params?.slug || []
   const componentName = slug[1]
 
