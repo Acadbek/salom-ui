@@ -4,15 +4,12 @@ import { getRegistryItem, getComponentCode } from "@/lib/registry"
 import ComponentPreview from "@/components/component-preview"
 import ComponentCode from "@/components/component-code"
 
-interface PageProps {
-  params: {
-    slug?: string[]
-  }
-}
-
-export default function ComponentPage({ params }: PageProps) {
+export default function ComponentPage(
+  { params, searchParams }: {
+    params: { slug?: string[] };
+    searchParams: { [key: string]: string | string[] | undefined };
+  }) {
   const slug = params?.slug || []
-
   const componentName = slug[1]
 
   if (!componentName) {
