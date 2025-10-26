@@ -31,7 +31,7 @@ const Alert = React.forwardRef<
     className={cn(alertVariants({ variant }), className)}
     {...props}
   >
-    <div className="w-full flex items-center justify-between gap-4 pr-[2px]">
+    <div className="w-full flex items-center justify-between gap-4 pr-[12px]">
       <div className="flex items-center justify-between">
         <span className="px-4">
           <Icon icon='carbon:error-filled' fontSize="18px" color="var(--destructive)" />

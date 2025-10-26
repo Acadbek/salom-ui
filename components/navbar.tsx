@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/carbon/button/button'
 import { Input } from '@/registry/carbon/input'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
@@ -34,9 +34,11 @@ export default function navbar() {
 
       <div className='flex items-center gap-4'>
         <Input size='sm' placeholder='Search...' />
-        <Link href=''>
-          <Icon icon='carbon:logo-github' fontSize='18px' />
-        </Link>
+        <Button size='icon'>
+          <Link href=''>
+            <Icon icon='carbon:logo-github' fontSize='18px' />
+          </Link>
+        </Button>
       </div>
     </nav>
   )
