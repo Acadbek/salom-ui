@@ -4,12 +4,14 @@ import { getRegistryItem, getComponentCode } from "@/lib/registry"
 import ComponentPreview from "@/components/component-preview"
 import ComponentCode from "@/components/component-code"
 
-export default function ComponentPage(
+export default async function ComponentPage(
   { params }: {
-    params: { slug?: string[] };
+    params: Promise<{ slug?: string[] }>;
   }) {
-  const slug = params?.slug || []
+  const resolvedParams = await params
+  const slug = resolvedParams?.slug || []
   const componentName = slug[1]
+
   if (!componentName) {
     return (
       <div className="container py-10">
@@ -20,12 +22,15 @@ export default function ComponentPage(
       </div>
     )
   }
+
   const registryItem = getRegistryItem(componentName)
   if (!registryItem) {
     notFound()
   }
+
   const code = getComponentCode(componentName)
   console.log(code);
+
   return (
     <div className="container py-10 space-y-8">
       <div>
