@@ -98,11 +98,11 @@ export default function Home() {
                   </Button>
                 </ButtonGroup>
                 <ButtonGroup>
-                  <Button kind="tertiary">Archive</Button>
-                  <Button kind="tertiary">Report</Button>
+                  <Button className="w-[200px]" kind="tertiary">Archive</Button>
+                  <Button className="w-[200px]" kind="tertiary">Report</Button>
                 </ButtonGroup>
                 <ButtonGroup>
-                  <Button kind="tertiary">Snooze</Button>
+                  <Button className="w-[200px]" kind="tertiary">Snooze</Button>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button kind="tertiary" size="icon" aria-label="More Options">
@@ -312,11 +312,11 @@ export default function Home() {
             </div>
             <div className="min-h-[400px] relative">
               <div className="flex flex-wrap gap-[1px]">
-                <Button>Primary</Button>
-                <Button kind="tertiary">Tertiary</Button>
-                <Button kind="destructive">Destructive</Button>
-                <Button kind="ghost">Ghost</Button>
-                <Button kind="dark">Dark</Button>
+                <Button className="w-[200px] h-12">Primary</Button>
+                <Button className="w-[200px] h-12" kind="tertiary">Tertiary</Button>
+                <Button className="w-[200px] h-12" kind="destructive">Destructive</Button>
+                <Button className="w-[200px] h-12" kind="ghost">Ghost</Button>
+                <Button className="w-[200px] h-12" kind="dark">Dark</Button>
               </div>
               <p className="mt-6 text-muted-foreground text-sm">2XL</p>
               <div className="flex flex-wrap gap-[1px] mt-2">

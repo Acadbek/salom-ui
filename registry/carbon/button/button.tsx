@@ -46,28 +46,21 @@ const buttonVariants = cva(
           active:hover:bg-accent/70`
       },
       size: {
-        xs: "h-[var(--size-1-height,1.5rem)] w-[var(--size-1-width,12.5rem)] pl-[var(--size-1-pl,1rem)] pr-[var(--size-1-pr,4rem)] text-[var(--size-1-text,0.75rem)]",
+        xs: "h-8 px-3 text-sm",
 
-        sm: "h-[var(--size-2-height,2rem)] w-[var(--size-2-width,12.5rem)] pl-[var(--size-2-pl,1rem)] pr-[var(--size-2-pr,4rem)] text-[var(--size-2-text,0.875rem)]",
+        sm: "h-10 px-4 text-sm",
 
-        md: "h-[var(--size-3-height,2.5rem)] w-[var(--size-3-width,12.5rem)] pl-[var(--size-3-pl,1rem)] pr-[var(--size-3-pr,4rem)] text-[var(--size-3-text,0.875rem)]",
+        md: "h-10 px-4 text-base",
 
-        lgp: "h-[var(--size-4-height,3rem)] w-[var(--size-4-width,12.5rem)] pl-[var(--size-4-pl,1rem)] pr-[var(--size-4-pr,4rem)] text-[var(--size-4-text,0.875rem)]",
+        lg: "h-12 px-6 text-lg",
 
-        lge: "h-[var(--size-5-height,3rem)] w-[var(--size-5-width,12.5rem)] pl-[var(--size-5-pl,1rem)] pr-[var(--size-5-pr,4rem)] text-[var(--size-5-text,1rem)]",
+        xl: "h-16 w-auto min-w-[12.5rem] pl-4 pr-16 pt-4 pb-4 text-sm text-left items-start justify-start",
 
-        xl: "h-[var(--size-6-height,4rem)] w-[var(--size-6-width,12.5rem)] pl-[var(--size-6-pl,1rem)] pr-[var(--size-6-pr,4rem)] text-[var(--size-6-text,0.875rem)] pt-[var(--size-6-pt,1rem)] items-start",
+        "2xl": "h-20 w-auto min-w-[12.5rem] pl-4 pr-16 pt-4 pb-4 text-left items-start justify-start",
 
-        "2xl":
-          "h-[var(--size-7-height,5rem)] w-[var(--size-7-width,12.5rem)] pl-[var(--size-7-pl,1rem)] pr-[var(--size-7-pr,4rem)] pt-[var(--size-7-pt,1rem)] items-start",
+        default: "h-10 px-4 py-2",
 
-        default:
-          "h-[var(--size-default-height,3rem)] w-[var(--size-default-width,12.5rem)] pl-[var(--size-default-pl,1rem)] pr-[var(--size-default-pr,4rem)]",
-
-        icon: "h-10 w-10 flex items-center justify-center",
-
-        "calendar-icon":
-          "h-[var(--cell-size,var(--size-calendar-height,2.5rem))] w-[var(--cell-size,var(--size-calendar-width,2.5rem))] justify-center",
+        icon: "h-10 w-10",
       },
       hasIcon: {
         true: "gap-2",
