@@ -35,6 +35,13 @@ const buttonVariants = cva(
           dark:focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_var(--light-focus-ring)]
           focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_var(--primary)]`,
 
+        outline: `bg-transparent border
+          hover:bg-accent
+          active:hover:bg-accent/70
+          border-[var(--border)]
+          text-[var(--foreground)]
+          focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_#DEDEDE]`,
+
         dark: `bg-[var(--dark)]
           text-[var(--dark-foreground)]
           hover:bg-[var(--dark)]/90

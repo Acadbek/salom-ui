@@ -93,19 +93,19 @@ export default function Home() {
             <div className="flex items-center justify-center gap-2 min-h-[400px] relative">
               <ButtonGroup>
                 <ButtonGroup className="hidden sm:flex">
-                  <Button kind="tertiary" size="icon" aria-label="Go Back">
+                  <Button kind="outline" size="icon" aria-label="Go Back">
                     <ArrowLeftIcon />
                   </Button>
                 </ButtonGroup>
                 <ButtonGroup>
-                  <Button className="w-[200px]" kind="tertiary">Archive</Button>
-                  <Button className="w-[200px]" kind="tertiary">Report</Button>
+                  <Button className="w-[200px]" kind="outline">Archive</Button>
+                  <Button className="w-[200px]" kind="outline">Report</Button>
                 </ButtonGroup>
                 <ButtonGroup>
-                  <Button className="w-[200px]" kind="tertiary">Snooze</Button>
+                  <Button className="w-[200px]" kind="outline">Snooze</Button>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button kind="tertiary" size="icon" aria-label="More Options">
+                      <Button kind="outline" size="icon" aria-label="More Options">
                         <MoreHorizontalIcon />
                       </Button>
                     </DropdownMenuTrigger>
