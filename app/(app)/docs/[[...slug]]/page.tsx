@@ -4,15 +4,12 @@ import { getRegistryItem, getComponentCode } from "@/lib/registry"
 import ComponentPreview from "@/components/component-preview"
 import ComponentCode from "@/components/component-code"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function ComponentPage(
-  { params, _searchParams }: {
+  { params }: {
     params: { slug?: string[] };
-    _searchParams: { [key: string]: string | string[] | undefined };
   }) {
   const slug = params?.slug || []
   const componentName = slug[1]
-
   if (!componentName) {
     return (
       <div className="container py-10">
@@ -23,16 +20,12 @@ export default function ComponentPage(
       </div>
     )
   }
-
   const registryItem = getRegistryItem(componentName)
-
   if (!registryItem) {
     notFound()
   }
-
   const code = getComponentCode(componentName)
   console.log(code);
-
   return (
     <div className="container py-10 space-y-8">
       <div>
@@ -43,12 +36,10 @@ export default function ComponentPage(
           A {componentName} component built with Radix UI and Tailwind CSS.
         </p>
       </div>
-
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold">Preview</h2>
         <ComponentPreview name={componentName} />
       </div>
-
       {code && (
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">Code</h2>
@@ -58,4 +49,3 @@ export default function ComponentPage(
     </div>
   )
 }
-
