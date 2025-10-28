@@ -41,6 +41,13 @@ import {
   TabsTrigger,
 } from "@/registry/carbon/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/registry/carbon/alert";
+import { RadioGroup, RadioGroupItem } from "@/registry/carbon/radio";
+import { Avatar, AvatarFallback, AvatarImage } from "@/registry/carbon/avatar";
+import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/registry/carbon/breadcrumb";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/registry/carbon/dropdown";
+import Link from "next/link";
+import { ButtonGroup } from "@/registry/carbon/button-group";
+import { ArchiveIcon, ArrowLeftIcon, CalendarPlusIcon, ClockIcon, ListFilterPlusIcon, MailCheckIcon, MoreHorizontalIcon, TagIcon, Trash2Icon } from "lucide-react";
 
 export default function Home() {
 
@@ -75,6 +82,180 @@ export default function Home() {
           <ModeToggle />
         </header>
         <main className="flex flex-col flex-1 gap-8">
+
+          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm text-muted-foreground">
+                Code snipped component
+              </h2>
+              <OpenInV0Button name="hello-world" className="w-fit" />
+            </div>
+            <div className="flex items-center justify-center gap-2 min-h-[400px] relative">
+              <ButtonGroup>
+                <ButtonGroup className="hidden sm:flex">
+                  <Button kind="tertiary" size="icon" aria-label="Go Back">
+                    <ArrowLeftIcon />
+                  </Button>
+                </ButtonGroup>
+                <ButtonGroup>
+                  <Button kind="tertiary">Archive</Button>
+                  <Button kind="tertiary">Report</Button>
+                </ButtonGroup>
+                <ButtonGroup>
+                  <Button kind="tertiary">Snooze</Button>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button kind="tertiary" size="icon" aria-label="More Options">
+                        <MoreHorizontalIcon />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-52">
+                      <DropdownMenuGroup>
+                        <DropdownMenuItem>
+                          <MailCheckIcon />
+                          Mark as Read
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <ArchiveIcon />
+                          Archive
+                        </DropdownMenuItem>
+                      </DropdownMenuGroup>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuGroup>
+                        <DropdownMenuItem>
+                          <ClockIcon />
+                          Snooze
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <CalendarPlusIcon />
+                          Add to Calendar
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <ListFilterPlusIcon />
+                          Add to List
+                        </DropdownMenuItem>
+                        <DropdownMenuSub>
+                          <DropdownMenuSubTrigger>
+                            <TagIcon />
+                            Label As...
+                          </DropdownMenuSubTrigger>
+                          <DropdownMenuSubContent>
+                            <DropdownMenuRadioGroup
+                              value='personal'
+                              onValueChange={() => { }}
+                            >
+                              <DropdownMenuRadioItem value="personal">
+                                Personal
+                              </DropdownMenuRadioItem>
+                              <DropdownMenuRadioItem value="work">
+                                Work
+                              </DropdownMenuRadioItem>
+                              <DropdownMenuRadioItem value="other">
+                                Other
+                              </DropdownMenuRadioItem>
+                            </DropdownMenuRadioGroup>
+                          </DropdownMenuSubContent>
+                        </DropdownMenuSub>
+                      </DropdownMenuGroup>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuGroup>
+                        <DropdownMenuItem>
+                          <Trash2Icon />
+                          Trash
+                        </DropdownMenuItem>
+                      </DropdownMenuGroup>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </ButtonGroup>
+              </ButtonGroup>
+            </div>
+          </div>
+
+
+          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm text-muted-foreground">
+                Code snipped component
+              </h2>
+              <OpenInV0Button name="hello-world" className="w-fit" />
+            </div>
+            <div className="flex items-center justify-center gap-2 min-h-[400px] relative">
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link href="/">Home</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="flex items-center gap-1 cursor-pointer">
+                        <BreadcrumbEllipsis className="size-4" />
+                        <span className="sr-only">Toggle menu</span>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="start">
+                        <DropdownMenuItem>Documentation</DropdownMenuItem>
+                        <DropdownMenuItem>Themes</DropdownMenuItem>
+                        <DropdownMenuItem>GitHub</DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link href="/docs/components">Components</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm text-muted-foreground">
+                Code snipped component
+              </h2>
+              <OpenInV0Button name="hello-world" className="w-fit" />
+            </div>
+            <div className="flex items-center justify-center gap-2 min-h-[400px] relative">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/acadbek.png"
+                  alt="Avatar Image"
+                />
+                <AvatarFallback>AN</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="Avatar Image"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm text-muted-foreground">
+                Code snipped component
+              </h2>
+              <OpenInV0Button name="hello-world" className="w-fit" />
+            </div>
+            <div className="flex gap-[1px] items-center justify-center min-h-[400px] relative">
+              <RadioGroup className="flex items-center gap-3">
+                <RadioGroupItem value="option1" id="r1" />
+                <RadioGroupItem value="option2" id="r2" />
+                <RadioGroupItem value="option3" id="r3" />
+              </RadioGroup>
+            </div>
+          </div>
 
           <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
             <div className="flex items-center justify-between">
