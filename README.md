@@ -9,7 +9,7 @@ Please read the [contributing guide](./contributing.md).
 
 ## License
 Licensed under the MIT license.
-
+<!-- 
 ## Components
 
 <input type="checkbox" checked disabled> Accordion  
@@ -57,4 +57,4 @@ Licensed under the MIT license.
 <input type="checkbox" disabled> Textarea  
 <input type="checkbox" disabled> Toast  
 <input type="checkbox" disabled> Toggle  
-<input type="checkbox" disabled> Toggle Group  
+<input type="checkbox" disabled> Toggle Group   -->
