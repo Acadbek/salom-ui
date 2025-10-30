@@ -1,23 +1,60 @@
-# registry-template
+# salom/ui
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+Accessible components that you can copy and paste into your apps. Free. Open Source.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v3. For Tailwind v4, see [registry-template](https://github.com/shadcn-ui/registry-template-v4). **We recommend using the v4 version for new registries**.
+Visit [salom.nosirjonov.uz](https://salom.nosirjonov.uz)
 
-## Getting Started
+## Contributing
+Please read the [contributing guide](./contributing.md).
 
-This is a template for creating a custom registry using Next.js.
+## License
+Licensed under the MIT license.
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+## Components
 
-## Documentation
+<input type="checkbox" checked disabled> Accordion  
+<input type="checkbox" checked disabled> Alert  
+<input type="checkbox" checked disabled> Avatar  
+<input type="checkbox" checked disabled> Breadcrumb  
+<input type="checkbox" checked disabled> Button  
+<input type="checkbox" checked disabled> Button Group  
+<input type="checkbox" checked disabled> Dialog  
+<input type="checkbox" checked disabled> Input  
+<input type="checkbox" checked disabled> Radio Group  
+<input type="checkbox" checked disabled> Select  
+<input type="checkbox" checked disabled> Tabs  
+<input type="checkbox" checked disabled> Tag  
+<input type="checkbox" checked disabled> Tooltip  
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+<input type="checkbox" disabled> Alert Dialog  
+<input type="checkbox" disabled> Aspect Ratio  
+<input type="checkbox" disabled> Badge  
+<input type="checkbox" disabled> Calendar  
+<input type="checkbox" disabled> Card  
+<input type="checkbox" disabled> Carousel  
+<input type="checkbox" disabled> Checkbox  
+<input type="checkbox" disabled> Collapsible  
+<input type="checkbox" disabled> Command  
+<input type="checkbox" disabled> Context Menu  
+<input type="checkbox" disabled> Drawer  
+<input type="checkbox" disabled> Dropdown Menu  
+<input type="checkbox" disabled> Form  
+<input type="checkbox" disabled> Hover Card  
+<input type="checkbox" disabled> Label  
+<input type="checkbox" disabled> Menubar  
+<input type="checkbox" disabled> Navigation Menu  
+<input type="checkbox" disabled> Pagination  
+<input type="checkbox" disabled> Popover  
+<input type="checkbox" disabled> Progress  
+<input type="checkbox" disabled> Resizable  
+<input type="checkbox" disabled> Scroll Area  
+<input type="checkbox" disabled> Separator  
+<input type="checkbox" disabled> Sheet  
+<input type="checkbox" disabled> Skeleton  
+<input type="checkbox" disabled> Slider  
+<input type="checkbox" disabled> Switch  
+<input type="checkbox" disabled> Table  
+<input type="checkbox" disabled> Textarea  
+<input type="checkbox" disabled> Toast  
+<input type="checkbox" disabled> Toggle  
+<input type="checkbox" disabled> Toggle Group  
