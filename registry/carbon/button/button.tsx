@@ -12,13 +12,15 @@ const buttonVariants = cva(
           hover:bg-[var(--primary)]/90
           active:bg-[var(--primary)]/70
           text-[var(--primary-foreground)]
-          focus:[box-shadow:inset_0_0_0_2px_var(--primary),inset_0_0_0_3px_var(--primary-focus-ring)]`,
+          focus:[box-shadow:inset_0_0_0_2px_var(--primary),inset_0_0_0_3px_var(--primary-focus-ring)]
+          data-[state=open]:[box-shadow:inset_0_0_0_2px_var(--primary),inset_0_0_0_3px_var(--primary-focus-ring)]`,
 
         destructive: `bg-[var(--destructive)]
           hover:bg-[var(--destructive)]/90
           active:bg-[var(--destructive)]/70
           text-[var(--destructive-foreground)]
-          focus:[box-shadow:inset_0_0_0_2px_var(--destructive),inset_0_0_0_3px_var(--destructive-focus-ring)]`,
+          focus:[box-shadow:inset_0_0_0_2px_var(--destructive),inset_0_0_0_3px_var(--destructive-focus-ring)]
+          data-[state=open]:[box-shadow:inset_0_0_0_2px_var(--destructive),inset_0_0_0_3px_var(--destructive-focus-ring)]`,
 
         tertiary: `bg-[var(--tertiary)]
           hover:bg-[var(--tertiary)]/50
@@ -26,27 +28,31 @@ const buttonVariants = cva(
           border-[1px]
           border-[var(--tertiary-border)]
           text-[var(--tertiary-foreground)]
-          focus:[box-shadow:inset_0_0_0_2px_var(--tertiary),inset_0_0_0_3px_var(--tertiary-focus-ring)]`,
+          focus:[box-shadow:inset_0_0_0_2px_var(--tertiary),inset_0_0_0_3px_var(--tertiary-focus-ring)]
+          data-[state=open]:[box-shadow:inset_0_0_0_2px_var(--tertiary),inset_0_0_0_3px_var(--tertiary-focus-ring)]`,
 
         light: `bg-[var(--light)] border
           hover:bg-[var(--light)]/90
           active:bg-[var(--light)]/70
           text-[var(--light-foreground)]
           dark:focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_var(--light-focus-ring)]
-          focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_var(--primary)]`,
+          focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_var(--primary)]
+          data-[state=open]:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_var(--light-focus-ring)]`,
 
         outline: `bg-transparent border
           hover:bg-accent
           active:hover:bg-accent/70
           border-[var(--border)]
           text-[var(--foreground)]
-          focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_#DEDEDE]`,
+          focus:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_#DEDEDE]
+          data-[state=open]:[box-shadow:inset_0_0_0_2px_var(--light),inset_0_0_0_3px_#DEDEDE]`,
 
         dark: `bg-[var(--dark)]
           text-[var(--dark-foreground)]
           hover:bg-[var(--dark)]/90
           active:bg-[var(--dark)]/80
-          focus:[box-shadow:inset_0_0_0_2px_var(--dark),inset_0_0_0_3px_var(--dark-focus-ring)]`,
+          focus:[box-shadow:inset_0_0_0_2px_var(--dark),inset_0_0_0_3px_var(--dark-focus-ring)]
+          data-[state=open]:[box-shadow:inset_0_0_0_2px_var(--dark),inset_0_0_0_3px_var(--dark-focus-ring)]`,
 
         ghost: `bg-[var(--ghost)]
           hover:bg-accent

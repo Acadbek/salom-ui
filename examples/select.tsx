@@ -11,7 +11,7 @@ import {
 const SelectExample = () => {
   return (
     <Select>
-      <SelectTrigger color="white" className="w-full mt-6">
+      <SelectTrigger className="w-full mt-6">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>

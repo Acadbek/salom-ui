@@ -35,6 +35,11 @@ import { Tag } from "@/registry/carbon/tag";
 import { Icon } from "@iconify/react";
 import { ModeToggle } from "@/components/mode-toggle";
 import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/carbon/popover";
+import {
   Tabs,
   TabsContent,
   TabsList,
@@ -47,9 +52,32 @@ import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, Breadcr
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/registry/carbon/dropdown";
 import Link from "next/link";
 import { ButtonGroup } from "@/registry/carbon/button-group";
-import { ArchiveIcon, ArrowLeftIcon, CalendarPlusIcon, ClockIcon, ListFilterPlusIcon, MailCheckIcon, MoreHorizontalIcon, TagIcon, Trash2Icon } from "lucide-react";
+import {
+  Calculator,
+  Calendar,
+  CreditCard,
+  Settings,
+  Smile,
+  User, ArchiveIcon, ArrowLeftIcon, CalendarPlusIcon, ClockIcon, ListFilterPlusIcon, MailCheckIcon, MoreHorizontalIcon, TagIcon, Trash2Icon,
+  ChevronsUpDown,
+  Check
+} from "lucide-react";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/registry/carbon/command";
+import { Label } from "@/registry/carbon/label";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
+  const [open, setOpen] = React.useState(false)
+  const [value, setValue] = React.useState("")
 
   const [tabs, setTabs] = React.useState([
     { id: 'tab1', label: 'Home', content: 'Home content' },
@@ -70,6 +98,30 @@ export default function Home() {
 
     console.log(`Tab closed: ${closedValue}`);
   };
+
+
+  const frameworks = [
+    {
+      value: "next.js",
+      label: "Next.js",
+    },
+    {
+      value: "sveltekit",
+      label: "SvelteKit",
+    },
+    {
+      value: "nuxt.js",
+      label: "Nuxt.js",
+    },
+    {
+      value: "remix",
+      label: "Remix",
+    },
+    {
+      value: "astro",
+      label: "Astro",
+    },
+  ]
 
   return (
     <TooltipProvider>
@@ -213,6 +265,184 @@ export default function Home() {
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm text-muted-foreground">
+                Code snipped component
+              </h2>
+              <OpenInV0Button name="hello-world" className="w-fit" />
+            </div>
+            <div className="flex items-center justify-center gap-2 min-h-[400px] relative">
+              <Command className="border md:min-w-[450px]">
+                <CommandInput placeholder="Search..." />
+                <CommandList className="">
+                  <CommandEmpty>No results found.</CommandEmpty>
+                  <CommandGroup heading="Suggestions">
+                    <CommandItem>
+                      <Calendar />
+                      <span>Calendar</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Smile />
+                      <span>Search Emoji</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Calculator />
+                      <span>Calculator</span>
+                    </CommandItem>
+                  </CommandGroup>
+                  <CommandSeparator />
+                  <CommandGroup heading="Settings">
+                    <CommandItem>
+                      <User />
+                      <span>Profile</span>
+                      <CommandShortcut>⌘P</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                      <CreditCard />
+                      <span>Billing</span>
+                      <CommandShortcut>⌘B</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                      <Settings />
+                      <span>Settings</span>
+                      <CommandShortcut>⌘S</CommandShortcut>
+                    </CommandItem>
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm text-muted-foreground">
+                Code snipped component
+              </h2>
+              <OpenInV0Button name="hello-world" className="w-fit" />
+            </div>
+            <div className="flex items-center justify-center gap-2 min-h-[400px] relative">
+              <Select>
+                <SelectTrigger className="w-[280px]">
+                  <SelectValue placeholder="Select a fruit" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectItem value="apple">Apple</SelectItem>
+                    <SelectItem value="banana">Banana</SelectItem>
+                    <SelectItem value="blueberry">Blueberry</SelectItem>
+                    <SelectItem value="grapes">Grapes</SelectItem>
+                    <SelectItem value="pineapple1">Pineapple</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Popover open={open} onOpenChange={setOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                    kind="tertiary"
+                    role="combobox"
+                    aria-expanded={open}
+                    className="w-[200px] justify-between"
+                  >
+                    {value
+                      ? frameworks.find((framework) => framework.value === value)?.label
+                      : "Select framework..."}
+                    <ChevronsUpDown className="opacity-50" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-[200px] p-0">
+                  <Command>
+                    <CommandInput placeholder="Search framework..." className="h-9" />
+                    <CommandList>
+                      <CommandEmpty>No framework found.</CommandEmpty>
+                      <CommandGroup>
+                        {frameworks.map((framework) => (
+                          <CommandItem
+                            key={framework.value}
+                            value={framework.value}
+                            onSelect={(currentValue) => {
+                              setValue(currentValue === value ? "" : currentValue)
+                              setOpen(false)
+                            }}
+                          >
+                            {framework.label}
+                            <Check
+                              className={cn(
+                                "ml-auto",
+                                value === framework.value ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                          </CommandItem>
+                        ))}
+                      </CommandGroup>
+                    </CommandList>
+                  </Command>
+                </PopoverContent>
+              </Popover>
+            </div>
+          </div>
+
+
+          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm text-muted-foreground">
+                Code snipped component
+              </h2>
+              <OpenInV0Button name="hello-world" className="w-fit" />
+            </div>
+            <div className="flex items-center justify-center gap-2 min-h-[400px] relative">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button kind="primary">Open popover</Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-80">
+                  <div className="grid gap-4">
+                    <div className="space-y-2">
+                      <h4 className="leading-none font-medium">Dimensions</h4>
+                      <p className="text-muted-foreground text-sm">
+                        Set the dimensions for the layer.
+                      </p>
+                    </div>
+                    <div className="grid gap-2">
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="width">Width</Label>
+                        <Input
+                          id="width"
+                          defaultValue="100%"
+                          className="col-span-3 h-8"
+                        />
+                      </div>
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="maxWidth">Weight</Label>
+                        <Input
+                          id="maxWidth"
+                          defaultValue="400"
+                          className="col-span-3 h-8"
+                        />
+                      </div>
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="height">Height</Label>
+                        <Input
+                          id="height"
+                          defaultValue="25px"
+                          className="col-span-3 h-8"
+                        />
+                      </div>
+                      <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="maxHeight">Size</Label>
+                        <Input
+                          id="maxHeight"
+                          defaultValue="none"
+                          className="col-span-3 h-8"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
             </div>
           </div>
 
@@ -559,30 +789,6 @@ export default function Home() {
                   </SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
-            <div className="flex items-center justify-between">
-              <h2 className="text-sm text-muted-foreground">
-                A contact form with Zod validation.
-              </h2>
-              <OpenInV0Button name="example-form" className="w-fit" />
-            </div>
-            <div className="flex items-center justify-center min-h-[500px] relative">
-              <ExampleForm />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-4 border p-4 min-h-[450px] relative">
-            <div className="flex items-center justify-between">
-              <h2 className="text-sm text-muted-foreground">
-                A complex component showing hooks, libs and components.
-              </h2>
-              <OpenInV0Button name="complex-component" className="w-fit" />
-            </div>
-            <div className="flex items-center justify-center min-h-[400px] relative">
-              {/*<PokemonPage />*/}
             </div>
           </div>
         </main>
