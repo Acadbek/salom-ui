@@ -11,7 +11,6 @@ import {
 import * as React from "react";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { Button } from "@/registry/carbon/button/button";
-import { ExampleForm } from "@/registry/carbon/example-form/example-form";
 import {
   Accordion,
   AccordionContent,
@@ -668,12 +667,11 @@ export default function Home() {
                         subdomain, or a shared domain and host.
                       </p>
                       <Input
-                        variant="white"
                         className="mt-7"
                         placeholder="Placeholder"
                       />
                       <Select>
-                        <SelectTrigger color="white" className="w-full mt-6">
+                        <SelectTrigger className="w-full mt-6">
                           <SelectValue placeholder="Select a fruit" />
                         </SelectTrigger>
                         <SelectContent>

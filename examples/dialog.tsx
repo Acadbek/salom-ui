@@ -41,12 +41,11 @@ const DialogExample = () => {
                 subdomain, or a shared domain and host.
               </p>
               <Input
-                variant="white"
                 className="mt-7"
                 placeholder="Placeholder"
               />
               <Select>
-                <SelectTrigger color="white" className="w-full mt-6">
+                <SelectTrigger className="w-full mt-6">
                   <SelectValue placeholder="Select a fruit" />
                 </SelectTrigger>
                 <SelectContent>

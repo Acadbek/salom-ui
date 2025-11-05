@@ -45,7 +45,7 @@ export default function ComponentPreview({ name }: ComponentPreviewProps) {
   return (
     <div className="preview relative border">
       <S>
-        <SelectTrigger color="white" className="w-full">
+        <SelectTrigger className="w-full">
           <SelectValue placeholder="Select a fruit" />
         </SelectTrigger>
         <SelectContent>
